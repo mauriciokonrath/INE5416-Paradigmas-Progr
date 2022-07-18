@@ -1,5 +1,6 @@
 %https://swish.swi-prolog.org/example/examples.swinb
 %https://rachacuca.com.br/logica/problemas/black-friday/
+% solucao(L).
 
 %cores das camisetas
 camiseta(amarela).
