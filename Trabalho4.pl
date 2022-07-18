@@ -58,11 +58,11 @@ aDireita(X,Y,Lista) :- aEsquerda(Y,X,Lista).
 aoLado(X,Y,Lista) :- nextto(X,Y,Lista);nextto(Y,X,Lista).
 
 %X está no canto se ele é o primeiro ou o último da lista
-noCanto(X,Lista) :- last(Lista,X).
-noCanto(X,[X|_]).
+ponta(X,Lista) :- last(Lista,X).
+ponta(X,[X|_]).
 
 % Verifica se X esta na 1a posição
-%primeira(X,[X|_]).
+primeira(X,[X|_]).
 
 % Verifica se todos os elementos da lista sao diferentes
 todosDiferentes([]).
@@ -88,7 +88,7 @@ aoLado(comprador(_,anita,_,_,_,_), comprador(_,_,_,50,_,_), ListaSolucao),
 aEsquerda(comprador(_,anita,_,_,_,_), comprador(_,_,_,50,_,_), ListaSolucao),
 
 % Em uma das pontas está a mulher de camiseta Amarela.
-noCanto(comprador(amarela,_,_,_,_,_), ListaSolucao),
+ponta(comprador(amarela,_,_,_,_,_), ListaSolucao),
 
 % A cliente que está comprando um Notebook está em algum lugar entre quem conseguiu a maior porcentagem de desconto e quem está comprando uma Geladeira, nessa ordem.
 entre(comprador(_,_,notebook,_,_,_), comprador(_,_,_,70,_,_), comprador(_,_,geladeira,_,_,_), ListaSolucao),
@@ -123,8 +123,8 @@ aoLado(comprador(branca,_,_,_,_,_), comprador(_,_,_,50,_,_), ListaSolucao),
 % Quem está acompanhada do Pai está entre quem está acompanhada do Irmão e quem está acompanhada do Namorado, nessa ordem.
 entre(comprador(_,_,_,_,_,pai), comprador(_,_,_,_,_,irmao), comprador(_,_,_,_,_,namorado), ListaSolucao),
 
-% Marietta tem 31 anos.
-member(comprador(_,marietta,_,31,_,_), ListaSolucao),
+% Marietta tem 31 anos. DUVIDA AQUI
+member(comprador(_,marietta,_,_,31,_), ListaSolucao),
 
 % Anita está ao lado da cliente de camiseta Azul.
 aoLado(comprador(_,anita,_,_,_,_), comprador(azul,_,_,_,_,_), ListaSolucao),
