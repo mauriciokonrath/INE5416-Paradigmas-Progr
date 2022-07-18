@@ -1,3 +1,6 @@
+%https://swish.swi-prolog.org/example/examples.swinb
+%https://rachacuca.com.br/logica/problemas/black-friday/
+
 %cores das camisetas
 camiseta(amarela).
 camiseta(azul).
